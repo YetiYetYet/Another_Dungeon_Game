@@ -9,8 +9,8 @@ public class OnPerspectiveSwitch : MonoBehaviour
     public CameraController cameraController;
     // public Material invisibleMaterial;
     public List<SkinnedMeshRenderer> invisibleWhenFPS;
-    public GameObject itemsParentRight;
-    public GameObject itemsParentLeft;
+    public Transform itemsParentRight;
+    public Transform itemsParentLeft;
 
     private void Start()
     {
@@ -19,25 +19,25 @@ public class OnPerspectiveSwitch : MonoBehaviour
 
     void DisableMesh(bool perspective)
     {
-        MeshRenderer mesh;
         foreach (var meshRenderer in invisibleWhenFPS)
         {
             meshRenderer.enabled = !perspective;
         }
 
-        foreach (var child in Tools.GetChildRecursive(itemsParentRight.transform))
+        DisableAllChildMesh(itemsParentLeft, !perspective);
+        DisableAllChildMesh(itemsParentRight, !perspective);
+    }
+
+    void DisableAllChildMesh(Transform parent, bool disabled)
+    {
+        foreach (var child in Tools.GetChildRecursive(parent.transform))
         {
-            mesh = child.gameObject.GetComponent<MeshRenderer>();
-            if(mesh != null)
-                mesh.enabled = !perspective;
-            
-        }
-        
-        foreach (var child in Tools.GetChildRecursive(itemsParentLeft.transform))
-        {
-            mesh = child.gameObject.GetComponent<MeshRenderer>();
-            if(mesh != null)
-                mesh.enabled = !perspective;
+            MeshRenderer mesh = child.gameObject.GetComponent<MeshRenderer>();
+            SkinnedMeshRenderer skinnedMesh = child.gameObject.GetComponent<SkinnedMeshRenderer>();
+            if(mesh != null) 
+                mesh.enabled = disabled;
+            if (skinnedMesh != null) 
+                skinnedMesh.enabled = disabled;
         }
     }
 }

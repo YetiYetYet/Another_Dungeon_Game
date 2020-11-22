@@ -5,23 +5,17 @@ namespace Utils
 {
     public static class Tools
     {
-        public static List<Transform> GetChildRecursive(Transform root)
+        public static List<Transform> GetChildRecursive(Transform parent, List<Transform> transformsList = null)
         {
-            List<Transform> childs = new List<Transform>();
-            ChildBuildList(root, childs);
-            return childs;
-        }
-
-        private static void ChildBuildList(Transform root, List<Transform> list)
-        {
-            if (root.childCount > 0)
+            if (transformsList == null)
+                transformsList = new List<Transform>();
+            foreach (Transform child in parent)
             {
-                foreach (var child in root.GetComponentsInChildren<Transform>())
-                {
-                    list.Add(child);
-                    ChildBuildList(child, list);
-                }
+                transformsList.Add(child);
+                GetChildRecursive(child, transformsList);
             }
+
+            return transformsList;
         }
     }
 }
