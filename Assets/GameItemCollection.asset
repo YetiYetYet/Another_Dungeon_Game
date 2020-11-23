@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8564440057352789104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e74c32144565264eb86dc7514aca7f7, type: 3}
+  m_Name: MyGrenade
+  m_EditorClassIdentifier: 
+  m_ID: 5
+  m_CategoryIDs: 68ede25f
+  m_Description: 
+  m_Capacity: 5
 --- !u!114 &-6384439450492693672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,6 +64,22 @@ MonoBehaviour:
   m_CategoryIDs: 68ede25f
   m_Description: 
   m_Capacity: 2147483647
+--- !u!114 &-437580519531108800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e74c32144565264eb86dc7514aca7f7, type: 3}
+  m_Name: MyArrowBow
+  m_EditorClassIdentifier: 
+  m_ID: 4
+  m_CategoryIDs: 68ede25f
+  m_Description: 
+  m_Capacity: 2147483647
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +98,25 @@ MonoBehaviour:
   - {fileID: -3066634663996588638}
   - {fileID: -6384439450492693672}
   - {fileID: -1155183626339348344}
+  - {fileID: 4465464058525811933}
+  - {fileID: -437580519531108800}
+  - {fileID: -8564440057352789104}
+--- !u!114 &4465464058525811933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e74c32144565264eb86dc7514aca7f7, type: 3}
+  m_Name: MyBow
+  m_EditorClassIdentifier: 
+  m_ID: 3
+  m_CategoryIDs: 68ede25f
+  m_Description: 
+  m_Capacity: 1
 --- !u!114 &6335461703532011172
 MonoBehaviour:
   m_ObjectHideFlags: 0
